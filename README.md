@@ -1,90 +1,162 @@
-# 🔢 Push_swap
+# 🔢 Push_swap  
+> 42 Network Project — Sorting Algorithm Optimization
 
-> Sorting data on a stack using a limited set of operations.
-
-**Push_swap** is a 42 project focused on **sorting algorithms and optimization**.  
-The objective is to sort a stack of integers using **two stacks** and a **restricted set of operations**, while minimizing the number of moves.
-
-This project develops skills in:
-
-- algorithm design
-- complexity analysis
-- stack manipulation
-- optimization strategies
-- parsing and error handling
+![42 Badge](https://img.shields.io/badge/42-Push_swap-black?style=for-the-badge)
+![C](https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c)
+![Algorithm](https://img.shields.io/badge/Focus-Algorithms-orange?style=for-the-badge)
+![Sorting](https://img.shields.io/badge/Sorting-Optimization-green?style=for-the-badge)
 
 ---
 
-# 🧠 Project Concept
+## 📖 Overview
 
-You are given a stack **A** filled with integers.  
-Your goal is to sort them in **ascending order** using another empty stack **B**.
+**Push_swap** is an algorithmic project from the 42 curriculum focused on sorting data using a **limited set of operations** and **two stacks**.
 
-However, you can only use a specific set of operations.
-
-The program outputs the **sequence of instructions** needed to sort the stack.
+The objective is to sort a list of integers with the **minimum number of moves**, emphasizing algorithm efficiency rather than brute force.
 
 ---
 
-# 📦 Stacks
-Stack A (initial)
-[ 4 ]
-[ 2 ]
-[ 7 ]
-[ 1 ]
-[ 3 ]
+## 🧠 What You Learn
 
-Stack B
-(empty)
-
-Goal:
-Stack A (sorted)
-[ 1 ]
-[ 2 ]
-[ 3 ]
-[ 4 ]
-[ 7 ]
-
+- Algorithm design & optimization  
+- Sorting strategies (small & large datasets)  
+- Stack data structures  
+- Complexity analysis  
+- Problem-solving under constraints  
 
 ---
 
-# ⚙️ Allowed Operations
+## ⚙️ Rules
 
-### Swap
+- You have **two stacks**:
+  - 🅰️ Stack A (initial stack)
+  - 🅱️ Stack B (empty at start)
+
+- You must sort Stack A using only allowed operations.
+
+---
+
+## 🔧 Allowed Operations
 
 | Operation | Description |
-|------|------|
-| `sa` | swap first two elements of stack A |
-| `sb` | swap first two elements of stack B |
-| `ss` | sa and sb at the same time |
+|----------|------------|
+| `sa` | Swap top 2 elements of stack A |
+| `sb` | Swap top 2 elements of stack B |
+| `ss` | `sa` + `sb` |
+| `pa` | Push top of B → A |
+| `pb` | Push top of A → B |
+| `ra` | Rotate A (first → last) |
+| `rb` | Rotate B |
+| `rr` | `ra` + `rb` |
+| `rra` | Reverse rotate A |
+| `rrb` | Reverse rotate B |
+| `rrr` | `rra` + `rrb` |
 
 ---
 
-### Push
+## 🏗️ Project Structure
 
-| Operation | Description |
-|------|------|
-| `pa` | push the top element of B to A |
-| `pb` | push the top element of A to B |
-
----
-
-### Rotate
-
-| Operation | Description |
-|------|------|
-| `ra` | shift up all elements of A |
-| `rb` | shift up all elements of B |
-| `rr` | ra and rb at the same time |
+```
+.
+├── Makefile
+├── push_swap.h
+├── main.c
+├── parsing/
+├── operations/
+├── sorting/
+├── utils/
+└── checker/ (bonus)
+```
 
 ---
 
-### Reverse Rotate
+## 🚀 Usage
 
-| Operation | Description |
-|------|------|
-| `rra` | shift down all elements of A |
-| `rrb` | shift down all elements of B |
-| `rrr` | rra and rrb at the same time |
+### 🔧 Compile
+```bash
+make
+```
+
+### ▶️ Run
+```bash
+./push_swap 2 1 3 6 5 8
 
 ---
+
+## 🧩 Sorting Strategy
+
+### 🔹 Small Inputs (≤ 5 numbers)
+- Hardcoded optimal solutions  
+- Minimal moves  
+
+### 🔹 Large Inputs
+Common strategies include:
+- **Radix Sort (Binary)** ✅ (most used & efficient)  
+- Chunk-based sorting  
+- Index normalization  
+
+---
+
+## ⚡ Performance Goals
+
+| Numbers | Expected Moves |
+|--------|---------------|
+| 3      | ≤ 3           |
+| 5      | ≤ 12          |
+| 100    | < 700         |
+| 500    | < 5500        |
+
+---
+
+## 🔒 Key Concepts
+
+- Stack manipulation  
+- Indexing & normalization  
+- Bitwise operations (Radix)  
+- Move optimization  
+- Algorithm efficiency  
+
+---
+
+## ⚠️ Challenges
+
+- Finding the most efficient algorithm  
+- Minimizing number of operations  
+- Handling edge cases (duplicates, invalid input)  
+- Parsing and validation  
+- Debugging stack behavior  
+
+---
+
+## 🧪 Example
+
+```bash
+Input:
+4 2 1 3
+
+Output:
+pb
+pb
+sa
+pa
+pa
+```
+
+---
+
+## 🏁 Conclusion
+
+Push_swap is a key project to master **algorithmic thinking and optimization**, teaching how to solve problems under strict constraints with efficient strategies.
+
+---
+
+## 👤 Author
+
+**P.Prime**  
+42 Network Student (1337)
+
+---
+
+## ⭐ Final Note
+
+This project is not about sorting — it's about **how efficiently you can do it**.
